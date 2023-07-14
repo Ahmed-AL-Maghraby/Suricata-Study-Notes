@@ -28,7 +28,7 @@ foundation, the Open Information Security Foundation (OISF).
   $ cat /etc/suricata/suricata.yaml
   default-rule-path: from /etc/suricata/rules
   ```
-# Bisac Commands
+# Basic Commands
 
 + Suricata with Offline Input
   ```sh
