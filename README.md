@@ -9,3 +9,13 @@ Suricata is a high-performance Network IDS, IPS, and Network Security Monitoring
 It is open source and owned (as well as developed) by a community-run non-profit
 foundation, the Open Information Security Foundation (OISF).
 
+# Suricata Directory
+
++ Suricata rule files
+  ```sh
+  ls -lah /etc/suricata/rules/
+  ```
++ Show rule files
+  ```sh
+  more /etc/suricata/rules/emerging-trojan.rules
+  ```
