@@ -19,3 +19,7 @@ foundation, the Open Information Security Foundation (OISF).
   ```sh
   more /etc/suricata/rules/emerging-trojan.rules
   ```
++  variables are defined inside the configuration
+  ```sh
+  more /etc/suricata/suricata.yaml
+  ```
