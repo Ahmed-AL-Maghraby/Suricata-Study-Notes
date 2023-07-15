@@ -34,7 +34,40 @@ foundation, the Open Information Security Foundation (OISF).
   ```
 # Basic Commands
 
-+ Suricata with Offline Input
++ Suricata with Offline Input Pcap file
   ```sh
   sudo suricata -r file.pcap
   ```
+
++ Suricata’s (Live) LibPCAP mode
+  ```sh
+  ifconfig <- To identify the network interface Suricata will listen on
+  sudo suricata --pcap=eth0 -vv
+  ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
