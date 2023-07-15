@@ -14,7 +14,11 @@ foundation, the Open Information Security Foundation (OISF).
 + Suricata Logs
   ```sh
   /var/log/suricata
-  ``` 
+  ```
+  
+  <img src="/Image/">
+  <br/>
+  
 + Suricata rule files
   ```sh
   ls -lah /etc/suricata/rules/
