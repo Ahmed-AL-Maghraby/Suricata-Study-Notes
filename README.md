@@ -16,13 +16,15 @@ foundation, the Open Information Security Foundation (OISF).
   /var/log/suricata
   ```
   
-  <img src="/Image/">
+  <img src="https://drive.google.com/file/d/1eO4aMVnqS_r5Uc1X8OOVfT5gVVWCTrrE/view?usp=drive_link">
   <br/>
   
 + Suricata rule files
   ```sh
   ls -lah /etc/suricata/rules/
   ```
+   <img src="/Image/">
+  <br/>
 + Show rule files
   ```sh
   more /etc/suricata/rules/emerging-trojan.rules
