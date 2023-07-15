@@ -68,7 +68,7 @@ by default. You need root-level access to edit or use them.
   ```sh
   cat eve.json| jq -c 'select(.event_type == "dns")'
   ```
-
+If you want a prettier representation, don't write ``-c``
 
 
 
