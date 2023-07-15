@@ -58,8 +58,16 @@ by default. You need root-level access to edit or use them.
 
 
 
+# Analyis Json file using jq
 
-
++ Search about alerts
+  ```sh
+  cat eve.json| jq -c 'select(.event_type == "alert")'
+  ```
++ Protocol Filter (dns)
+  ```sh
+  cat eve.json| jq -c 'select(.event_type == "dns")'
+  ```
 
 
 
