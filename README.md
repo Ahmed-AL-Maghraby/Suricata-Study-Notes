@@ -42,6 +42,11 @@ foundation, the Open Information Security Foundation (OISF).
   ```sh
   sudo suricata -r file.pcap
   ```
+As already mentioned, Suricata outputs various logs inside the /var/log/suricata directory,
+by default. You need root-level access to edit or use them.
+1. eve.json <- Suricata’s recommended output
+2. fast.log
+3. stats.log <- Human-readable statistics log
 
 + Suricata’s (Live) LibPCAP mode
   ```sh
