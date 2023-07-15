@@ -27,7 +27,7 @@ foundation, the Open Information Security Foundation (OISF).
   ```sh
   more /etc/suricata/suricata.yaml
   ```
-+  default-rule-path
++ default-rule-path
   ```sh
   $ cat /etc/suricata/suricata.yaml
   default-rule-path: from /etc/suricata/rules
