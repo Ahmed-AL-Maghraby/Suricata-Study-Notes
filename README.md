@@ -77,7 +77,7 @@ action protocol from_ip port -> to_ip port (msg:"we are under attack
 by X"; content:"something"; content:"something else"; sid:10000000;
 rev:1;)
 ```
-Rule Sections <br/>
+<h2>Rule Sections <h2/>
 
 1. Header : ( action, protocol, src.ip, src.port, direction of the rule, dst.ip, dst.port  )
   ```sh
