@@ -73,9 +73,7 @@ If you want a prettier representation, don't write ``-c``
 # Suricata Rules Syntax
 
 ```css
-action protocol from_ip port -> to_ip port (msg:"we are under attack
-by X"; content:"something"; content:"something else"; sid:10000000;
-rev:1;)
+action protocol from_ip port -> to_ip port (msg:"we are under attack by X"; content:"something"; content:"something else"; sid:10000000; rev:1;)
 ```
 
 ## Rule Sections 
@@ -156,30 +154,21 @@ This keyword in a signature tells Suricata which protocol it concerns. You can c
 
 + Rule 1
   ```css
-  alert dns $HOME_NET any -> any any (msg:"TROJAN X Rogue DNS Query
-  Observed" dns_query; content:"default27061330-a.akamaihd.net";
-  isdataat:!1,relative; reference:url,threatintelprovider.com/trojanx;
-  classtype:trojan-activity; sid:1; rev:1;)
+  alert dns $HOME_NET any -> any any (msg:"TROJAN X Rogue DNS Query Observed" dns_query; content:"default27061330-a.akamaihd.net"; isdataat:!1,relative; reference:url,threatintelprovider.com/trojanx; classtype:trojan-activity; sid:1; rev:1;)
   ```
 + Rule 2
   ```cs
-  alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"TROJAN Z malicious
-  SSL Cert"; flow:established,to_client; tls_cert_subject;
-  content:"CN=uniquestring"; classtype:trojan-activity; sid:1; rev:1;)
+  alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"TROJAN Z malicious SSL Cert"; flow:established,to_client; tls_cert_subject; content:"CN=uniquestring"; classtype:trojan-activity; sid:1; rev:1;)
   ```
 
 + Rule 3
   ```css
-  alert dns $HOME_NET any -> any any (msg:"TROJAN Activity Detected DNS Query
-  to Known Sofacy Domain 1"; dns_query; content:"drivres-update.info"; nocase;
-  isdataat:!1,relative; sid:1; rev:1;)
+  alert dns $HOME_NET any -> any any (msg:"TROJAN Activity Detected DNS Query to Known Sofacy Domain 1"; dns_query; content:"drivres-update.info"; nocase; isdataat:!1,relative; sid:1; rev:1;)
   ```
 
 + Rule 4
   ```css
-  alert dns $HOME_NET any -> any any (msg:"TROJAN Activity Detected DNS Query
-  to Known Sofacy Domain 2"; dns_query; content:"softupdates.info"; nocase;
-  isdataat:!1,relative; sid:2; rev:1;)
+  alert dns $HOME_NET any -> any any (msg:"TROJAN Activity Detected DNS Query to Known Sofacy Domain 2"; dns_query; content:"softupdates.info"; nocase; isdataat:!1,relative; sid:2; rev:1;)
   ```
 + Rule 5
   ```css
