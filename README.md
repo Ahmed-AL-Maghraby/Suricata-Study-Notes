@@ -77,7 +77,8 @@ action protocol from_ip port -> to_ip port (msg:"we are under attack
 by X"; content:"something"; content:"something else"; sid:10000000;
 rev:1;)
 ```
-<h2>Rule Sections <h2/>
+
+## Rule Sections 
 
 1. Header : ( action, protocol, src.ip, src.port, direction of the rule, dst.ip, dst.port  )
   ```sh
@@ -92,9 +93,57 @@ rev:1;)
    sid:10000000; rev:5; reference:url,securingtomorrow.mcafee.com/2017-11-20-dridex;
    ```
 
+### Actoins
+Valid actions are:
++ alert - generate an alert
++ pass : stop further inspection of the packet
++ drop : drop packet and generate alert
++ reject : send RST/ICMP unreach error to the sender of the matching packet.
++ rejectsrc : same as just reject
++ rejectdst : send RST/ICMP error packet to receiver of the matching packet.
++ rejectboth : send RST/ICMP error packets to both sides of the conversation.
+
+>**Note**
+> In IPS mode, using any of the reject actions also enables drop.
+
+### Protocol
+This keyword in a signature tells Suricata which protocol it concerns. You can choose between four basic protocols:
+
++ tcp (for tcp-traffic)
++ udp
++ icmp
++ ip (ip stands for ‘all’ or ‘any’)
+
+<br/> There are also a few so-called application layer protocols, or layer 7 protocols you can pick from. These are:
 
 
-
++ http
++ ftp
++ tls (this includes ssl)
++ smb
++ dns
++ dcerpc
++ ssh
++ smtp
++ imap
++ modbus (disabled by default)
++ dnp3 (disabled by default)
++ enip (disabled by default)
++ nfs
++ ikev2
++ krb5
++ ntp
++ dhcp
++ rfb
++ rdp
++ snmp
++ tftp
++ sip
++ http2
++ 
+> **Note**
+> The availability of these protocols depends on whether the protocol is enabled in the configuration file suricata.yaml.
+> If you have a signature with for instance a http protocol, Suricata makes sure the signature can only match if it concerns http-traffic.
 
 
 
