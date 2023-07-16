@@ -81,13 +81,13 @@ rev:1;)
 ## Rule Sections 
 
 1. Header : ( action, protocol, src.ip, src.port, direction of the rule, dst.ip, dst.port  )
-  ```sh
-  alert tcp $EXTERNAL_NET any -> 10.200.0.0/24 80
-  ```
+   ```sh
+   alert tcp $EXTERNAL_NET any -> 10.200.0.0/24 80
+    ```
 2. Rule message & Contents : ( msg, content )
-  ```sh
-  (msg:"Malicious"; content:"POST"; content:"/trigger.php"; ...)
-  ```
+   ```sh
+   (msg:"Malicious"; content:"POST"; content:"/trigger.php"; ...)
+   ```
 3. Rule metadata : ( reference, sid, rev )
    ```sh
    sid:10000000; rev:5; reference:url,securingtomorrow.mcafee.com/2017-11-20-dridex;
@@ -153,6 +153,35 @@ This keyword in a signature tells Suricata which protocol it concerns. You can c
 
 
 # Rules Example
+
++ Rule 1
+  ```sh
+  alert dns $HOME_NET any -> any any (msg:"TROJAN X Rogue DNS Query
+  Observed" dns_query; content:"default27061330-a.akamaihd.net";
+  isdataat:!1,relative; reference:url,threatintelprovider.com/trojanx;
+  classtype:trojan-activity; sid:1; rev:1;)
+  ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
