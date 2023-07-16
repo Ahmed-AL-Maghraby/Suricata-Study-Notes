@@ -161,6 +161,13 @@ This keyword in a signature tells Suricata which protocol it concerns. You can c
   isdataat:!1,relative; reference:url,threatintelprovider.com/trojanx;
   classtype:trojan-activity; sid:1; rev:1;)
   ```
++ Rule 2
+  ```cs
+  alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"TROJAN Z malicious
+  SSL Cert"; flow:established,to_client; tls_cert_subject;
+  content:"CN=uniquestring"; classtype:trojan-activity; sid:1; rev:1;)
+  ```
+
 
 
 
