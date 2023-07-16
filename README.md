@@ -106,6 +106,8 @@ Valid actions are:
 >**Note**
 > In IPS mode, using any of the reject actions also enables drop.
 
+<br/>
+
 ### Protocol
 This keyword in a signature tells Suricata which protocol it concerns. You can choose between four basic protocols:
 
