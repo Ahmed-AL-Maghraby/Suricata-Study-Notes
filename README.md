@@ -172,14 +172,12 @@ This keyword in a signature tells Suricata which protocol it concerns. You can c
   ```
 + Rule 5
   ```css
+  alert dns $HOME_NET any -> any any (msg:"Possible Citi Phishing Attempt Observed in DNS Query "; dns_query; content:"online.citi.com"; nocase; isdataat:1,relative; sid:3; rev:1;)
   ```
 
-+ Rule 5
++ Rule 6
   ```css
-  ```
-
-+ Rule 5
-  ```css
+  alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"TROJAN Activity Observed Malicious SSL Cert (Qadars CnC)"; flow:established,to_client; tls_cert_subject; content:"CN=susana24.com"; classtype:trojanactivity; sid:4; rev:1;)
   ```
 
 
