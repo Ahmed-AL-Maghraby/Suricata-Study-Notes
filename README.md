@@ -152,7 +152,7 @@ This keyword in a signature tells Suricata which protocol it concerns. You can c
 +  Bidirectional traffic : $EXTENRAL_NET any <> $HOME_NET any
 
 
-
+# Rules Example
 
 
 
