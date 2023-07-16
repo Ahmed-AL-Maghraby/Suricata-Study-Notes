@@ -168,12 +168,22 @@ This keyword in a signature tells Suricata which protocol it concerns. You can c
   content:"CN=uniquestring"; classtype:trojan-activity; sid:1; rev:1;)
   ```
 
++ Rule 3
+  ```css
+  alert dns $HOME_NET any -> any any (msg:"TROJAN Activity Detected DNS Query
+  to Known Sofacy Domain 1"; dns_query; content:"drivres-update.info"; nocase;
+  isdataat:!1,relative; sid:1; rev:1;)
+  ```
 
-
-
-
-
-
++ Rule 4
+  ```css
+  alert dns $HOME_NET any -> any any (msg:"TROJAN Activity Detected DNS Query
+  to Known Sofacy Domain 2"; dns_query; content:"softupdates.info"; nocase;
+  isdataat:!1,relative; sid:2; rev:1;)
+  ```
++ Rule 5
+  ```css
+  ```
 
 
 
