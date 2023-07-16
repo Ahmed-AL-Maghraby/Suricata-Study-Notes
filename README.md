@@ -146,6 +146,10 @@ This keyword in a signature tells Suricata which protocol it concerns. You can c
 > If you have a signature with for instance a http protocol, Suricata makes sure the signature can only match if it concerns http-traffic.
 
 
+### Rule Direction
++ Outbound traffic : $HOME_NET any -> $EXTERNAL_NET any
++ Inbound traffic : $EXTENRAL_NET any -> $HOME_NET any
++  Bidirectional traffic : $EXTENRAL_NET any <> $HOME_NET any
 
 
 
