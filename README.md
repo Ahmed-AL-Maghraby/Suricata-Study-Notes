@@ -12,7 +12,7 @@ foundation, the Open Information Security Foundation (OISF).
 # Suricata Directory
 
 + Suricata Logs
-  ```sh
+  ```css
   /var/log/suricata
   ```
   
@@ -20,28 +20,28 @@ foundation, the Open Information Security Foundation (OISF).
   <br/>
   
 + Suricata rule files
-  ```sh
+  ```css
   ls -lah /etc/suricata/rules/
   ```
    <img src="/Image/">
   <br/>
-+ Show rule files
-  ```sh
++ cssow rule files
+  ```css
   more /etc/suricata/rules/emerging-trojan.rules
   ```
 + Variables are defined inside the configuration
-  ```sh
+  ```css
   more /etc/suricata/suricata.yaml
   ```
 + default-rule-path
-  ```sh
+  ```css
   $ cat /etc/suricata/suricata.yaml
   default-rule-path: from /etc/suricata/rules
   ```
 # Basic Commands
 
 + Suricata with Offline Input Pcap file
-  ```sh
+  ```css
   sudo suricata -r file.pcap
   ```
 As already mentioned, Suricata outputs various logs inside the /var/log/suricata directory,
@@ -51,7 +51,7 @@ by default. You need root-level access to edit or use them.
 3. stats.log <- Human-readable statistics log
 
 + Suricata’s (Live) LibPCAP mode
-  ```sh
+  ```css
   ifconfig <- To identify the network interface Suricata will listen on
   sudo suricata --pcap=eth0 -vv
   ```
@@ -61,18 +61,18 @@ by default. You need root-level access to edit or use them.
 # Analyis Json file using jq
 
 + Search about alerts
-  ```sh
+  ```css
   cat eve.json| jq -c 'select(.event_type == "alert")'
   ```
 + Protocol Filter (dns)
-  ```sh
+  ```css
   cat eve.json| jq -c 'select(.event_type == "dns")'
   ```
 If you want a prettier representation, don't write ``-c``
 
 # Suricata Rules Syntax
 
-```sh
+```css
 action protocol from_ip port -> to_ip port (msg:"we are under attack
 by X"; content:"something"; content:"something else"; sid:10000000;
 rev:1;)
@@ -81,15 +81,15 @@ rev:1;)
 ## Rule Sections 
 
 1. Header : ( action, protocol, src.ip, src.port, direction of the rule, dst.ip, dst.port  )
-   ```sh
+   ```css
    alert tcp $EXTERNAL_NET any -> 10.200.0.0/24 80
     ```
 2. Rule message & Contents : ( msg, content )
-   ```sh
+   ```css
    (msg:"Malicious"; content:"POST"; content:"/trigger.php"; ...)
    ```
 3. Rule metadata : ( reference, sid, rev )
-   ```sh
+   ```css
    sid:10000000; rev:5; reference:url,securingtomorrow.mcafee.com/2017-11-20-dridex;
    ```
 
@@ -123,7 +123,7 @@ This keyword in a signature tells Suricata which protocol it concerns. You can c
 + smb
 + dns
 + dcerpc
-+ ssh
++ scss
 + smtp
 + imap
 + modbus (disabled by default)
@@ -155,7 +155,7 @@ This keyword in a signature tells Suricata which protocol it concerns. You can c
 # Rules Example
 
 + Rule 1
-  ```sh
+  ```css
   alert dns $HOME_NET any -> any any (msg:"TROJAN X Rogue DNS Query
   Observed" dns_query; content:"default27061330-a.akamaihd.net";
   isdataat:!1,relative; reference:url,threatintelprovider.com/trojanx;
